@@ -27,7 +27,6 @@ options:
   homeassistant_topic: homeassistant
   homeassistant_sensors: all
 
-
   databases:
     - enabled: false
       url: postgres://lxp:lxp@localhost/lxp
@@ -72,4 +71,3 @@ schema:
     username: str?
     password: password?
     database: str?
-
