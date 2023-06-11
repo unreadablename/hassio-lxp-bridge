@@ -1,0 +1,108 @@
+name: lxp-bridge
+description: "lxp-bridge addon"
+version: 0.10.0
+stage: experimental
+slug: lxp-bridge
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armv7
+
+services:
+  - mqtt:need
+
+options:
+  # default_lease: 86400
+  # dns:
+  #   - 8.8.8.8
+  #   - 8.8.4.4
+  # ntp: []
+  # domain: null
+  # hosts: []
+  # max_lease: 172800
+
+  inverters:
+    - enabled: true
+      host: null
+      port: 8000
+      serial: null
+      datalog: null
+      heartbeats: false
+
+  # databases:
+  #   - enabled: bool
+  #     url: url
+
+  mqtt:
+    namespace: lxp
+      # enabled: true
+      # prefix: ha
+      # sensors: all
+    # homeassistant:
+    #   enabled: true
+    #   prefix: homeassistant
+    #   sensors: all
+  # homeassistant:
+  #   enabled: true
+  #   prefix: homeassistant
+  #   sensors: all
+
+  homeassistant_topic: homeassistant
+  homeassistant_sensors: all
+
+
+  databases:
+    - enabled: false
+      url: postgres://lxp:lxp@localhost/lxp
+    - enabled: false
+      url: mysql://lxp:lxp@localhost/lxp
+    - enabled: false
+      url: sqlite://lxp.db
+
+  influx:
+    enabled: false
+    url: http://localhost:8086
+    username:
+    password:
+    database: lxp
+
+schema:
+  inverters:
+    - enabled: bool
+      host: str
+      port: port
+      serial: "match(^\\d{10}$)"
+      datalog: "match(^\\w{2}\\d{8}$)"
+      heartbeats: bool
+
+  # networks:
+  #   - broadcast: str
+  #     gateway: str
+  #     interface: str
+  #     netmask: str
+  #     range_end: str
+  #     range_start: str
+  #     subnet: str
+
+  mqtt:
+    host: str?
+    port: int?
+    username: "str?"
+    password: "password?"
+    namespace: str
+
+  homeassistant_topic: str
+  homeassistant_sensors: str
+
+  databases:
+    - enabled: bool
+      url: url
+
+  influx:
+    enabled: bool
+    url: url?
+    username: str?
+    password: password?
+    database: str?
+
