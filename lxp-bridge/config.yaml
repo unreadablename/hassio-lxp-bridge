@@ -1,6 +1,6 @@
 name: lxp-bridge
 description: "lxp-bridge addon"
-version: 0.10.0
+version: 0.10.0-1
 stage: stable
 slug: lxp-bridge
 init: false

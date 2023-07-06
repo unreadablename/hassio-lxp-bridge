@@ -39,6 +39,6 @@ All notable changes to this project will be documented in the [CHANGELOG.md](has
 
 Version for releases is based on [lxp-bridge](https://github.com/celsworth/lxp-bridge/) format: `X.Y.Z`.
 
-Any changes on the addon that do not require a new version of Zigbee2MQlxp-bridgeTT will use the format: `X.Y.Z-A` where `X.Y.Z` is fixed on the lxp-bridge release version and `A` is related to the addon.
+Any changes on the addon that do not require a new version of lxp-bridge will use the format: `X.Y.Z-A` where `X.Y.Z` is fixed on the lxp-bridge release version and `A` is related to the addon.
 
 Edge version will not maintain a CHANGELOG and doesn't have a version.
