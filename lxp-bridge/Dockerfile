@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM "celsworth/lxp-bridge:v0.10.0" as lxp-bridge
+FROM "celsworth/lxp-bridge:v0.11.0" as lxp-bridge
 
 FROM $BUILD_FROM
 
