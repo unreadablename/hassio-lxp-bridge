@@ -3,3 +3,6 @@ build_from:
   aarch64: "ghcr.io/home-assistant/aarch64-base-debian:bullseye"
   amd64: "ghcr.io/home-assistant/amd64-base-debian:bullseye"
   armv7: "ghcr.io/home-assistant/armv7-base-debian:bullseye"
+codenotary:
+  signer: oleksandr.pidlisnyi@gmail.com
+  base_image: notary@home-assistant.io
