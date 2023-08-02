@@ -13,15 +13,6 @@ services:
   - mqtt:need
 
 options:
-  # default_lease: 86400
-  # dns:
-  #   - 8.8.8.8
-  #   - 8.8.4.4
-  # ntp: []
-  # domain: null
-  # hosts: []
-  # max_lease: 172800
-
   inverters:
     - enabled: true
       host: null
@@ -29,28 +20,19 @@ options:
       serial: null
       datalog: null
       heartbeats: false
-
-  # databases:
-  #   - enabled: bool
-  #     url: url
+      publish_holdings_on_connect: false
 
   mqtt:
     namespace: lxp
-      # enabled: true
-      # prefix: ha
-      # sensors: all
-    # homeassistant:
-    #   enabled: true
-    #   prefix: homeassistant
-    #   sensors: all
-  # homeassistant:
-  #   enabled: true
-  #   prefix: homeassistant
-  #   sensors: all
+
+    host: str?
+    port: str?
+    username: str?
+    password: str?
+    publish_individual_input: false
 
   homeassistant_topic: homeassistant
   homeassistant_sensors: all
-
 
   databases:
     - enabled: false
@@ -63,8 +45,6 @@ options:
   influx:
     enabled: false
     url: http://localhost:8086
-    username:
-    password:
     database: lxp
 
 schema:
@@ -75,15 +55,6 @@ schema:
       serial: "match(^\\d{10}$)"
       datalog: "match(^\\w{2}\\d{8}$)"
       heartbeats: bool
-
-  # networks:
-  #   - broadcast: str
-  #     gateway: str
-  #     interface: str
-  #     netmask: str
-  #     range_end: str
-  #     range_start: str
-  #     subnet: str
 
   mqtt:
     host: str?
@@ -101,9 +72,7 @@ schema:
 
   influx:
     enabled: bool
-    url: url?
-    username: str?
-    password: password?
-    database: str?
-
-
+    url: "url?"
+    username: "str?"
+    password: "password?"
+    database: "str?"
