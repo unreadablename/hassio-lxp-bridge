@@ -1,6 +1,6 @@
 name: lxp-bridge
 description: "lxp-bridge addon"
-version: 0.11.0
+version: 0.11.0-1
 stage: stable
 slug: lxp-bridge
 init: false
@@ -24,12 +24,6 @@ options:
 
   mqtt:
     namespace: lxp
-
-    host: str?
-    port: str?
-    username: str?
-    password: str?
-    publish_individual_input: false
 
   homeassistant_topic: homeassistant
   homeassistant_sensors: all
